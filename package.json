@@ -6,6 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "url": "https://github.com/martinkuba/provenance-test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
