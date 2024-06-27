@@ -3,7 +3,7 @@ on:
 
 name: Release
 jobs:
-  release-please:
+  run-release:
     runs-on: ubuntu-latest
     steps:
       # The logic below handles the npm publication:
