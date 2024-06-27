@@ -1,0 +1,28 @@
+on:
+  workflow_dispatch:
+
+name: Release
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      # The logic below handles the npm publication:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install packages
+        run: |
+          npm ci
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: npx lerna publish from-package --no-push --no-private --no-git-tag-version --no-verify-access --yes
