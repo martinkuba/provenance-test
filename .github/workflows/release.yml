@@ -6,7 +6,7 @@ jobs:
   run-release:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
+      contents: write
     steps:
       # The logic below handles the npm publication:
       - name: Checkout Repository
