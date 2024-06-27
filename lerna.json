@@ -2,6 +2,11 @@
   "npmClient": "npm",
   "useWorkspaces": true,
   "version": "independent",
+  "command": {
+    "publish": {
+      "access": "public"
+    }
+  },
   "changelog": {
     "repo": "martinkuba/provenance-test",
     "labels": {
